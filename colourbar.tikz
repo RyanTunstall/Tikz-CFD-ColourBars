@@ -1,0 +1,38 @@
+%Ryan Tunstall
+\begin{tikzpicture}[font=\small]
+
+\begin{axis}[
+xmin=0, xmax=1, %Adjust x range here and also in line 18
+ymin=0, ymax=1,
+axis on top,
+width=8cm,
+height=2cm,
+scaled x ticks=false,
+%xtick={0,0.2,0.4,0.6,0.8,1.0}, %Uncomment these two for explicit x ticks
+%xticklabels={0,0.2,0.4,0.6,0.8,1},
+ytick={0,1},
+yticklabels={,,},
+%xlabel={$T^{*}_{\textrm{\textcolor{white}{\textvisiblespace}}}$}
+]
+
+%Adjust x range here aswell
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0, xmax=1, ymin=0, ymax=1] 
+%%Uncomment which colour bar to use in the plot
+{CCM.png}; %StarCCM+ 256 Colours
+%{CCM32.png}; %StarCCM+ 32 Colours
+%{Paraview.png}; %Paraview colour bar, does not reflect rendered scene effects + lighting - 256 Colours
+%{Paraview32.png}; %Paraview colour bar, does not reflect rendered scene effects + lighting - 32 Colours
+%{Paraview2.png}; %Paraview colour bar, does reflect rendered scene effects + lighting - 256 Colours
+%{Paraview2_32.png}; %Paraview colour bar, does reflect rendered scene effects + lighting - 32 Colours
+
+\path [draw=black, fill opacity=0] (axis cs:13,1)--(axis cs:13,1);
+
+\path [draw=black, fill opacity=0] (axis cs:0.05,13)--(axis cs:0.05,13);
+
+\path [draw=black, fill opacity=0] (axis cs:13,1.38777878078145e-17)--(axis cs:13,1.38777878078145e-17);
+
+\path [draw=black, fill opacity=0] (axis cs:0,13)--(axis cs:0,13);
+
+\end{axis}
+
+\end{tikzpicture}
